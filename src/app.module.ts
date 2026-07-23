@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { MinisterProfilesModule } from './minister-profiles/minister-profiles.module';
 import { ChurchProfilesModule } from './church-profiles/church-profiles.module';
 import { PostingsModule } from './postings/postings.module';
+import { ApplicationsModule } from './applications/applications.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { PostingsModule } from './postings/postings.module';
     MinisterProfilesModule,
     ChurchProfilesModule,
     PostingsModule,
+    ApplicationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

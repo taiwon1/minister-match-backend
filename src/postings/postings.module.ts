@@ -9,5 +9,6 @@ import { ChurchProfilesModule } from '../church-profiles/church-profiles.module'
   imports: [TypeOrmModule.forFeature([Posting]), ChurchProfilesModule],
   controllers: [PostingsController],
   providers: [PostingsService],
+  exports: [PostingsService],
 })
 export class PostingsModule {}

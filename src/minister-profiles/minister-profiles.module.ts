@@ -8,5 +8,6 @@ import { MinisterProfile } from './entities/minister-profile.entity';
   imports: [TypeOrmModule.forFeature([MinisterProfile])],
   controllers: [MinisterProfilesController],
   providers: [MinisterProfilesService],
+  exports: [MinisterProfilesService],
 })
 export class MinisterProfilesModule {}
