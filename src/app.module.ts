@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { MinisterProfilesModule } from './minister-profiles/minister-profiles.module';
+import { ChurchProfilesModule } from './church-profiles/church-profiles.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { MinisterProfilesModule } from './minister-profiles/minister-profiles.mo
     UsersModule,
     AuthModule,
     MinisterProfilesModule,
+    ChurchProfilesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
