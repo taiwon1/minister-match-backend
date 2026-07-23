@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import { Controller, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
 import { ApplicationsService } from './applications.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { RolesGuard } from '../auth/guards/roles.guard';
@@ -28,5 +28,16 @@ export class ApplicationsController {
   @Roles(UserRole.MINISTER)
   findMyApplications(@CurrentUser() user: CurrentUserPayload) {
     return this.applicationsService.findMyApplications(user.userId);
+  }
+
+  @Patch('applications/:id/confirm')
+  @Roles(UserRole.CHURCH_ADMIN)
+  confirm(@CurrentUser() user: CurrentUserPayload, @Param('id') applicationId: string) {
+    return this.applicationsService.confirm(user.userId, applicationId);
+  }
+
+  @Get('applications/:id/contact')
+  contact(@CurrentUser() user: CurrentUserPayload, @Param('id') applicationId: string) {
+    return this.applicationsService.getMatchedContact(user.userId, applicationId);
   }
 }
