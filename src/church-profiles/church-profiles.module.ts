@@ -8,5 +8,6 @@ import { ChurchProfile } from './entities/church-profile.entity';
   imports: [TypeOrmModule.forFeature([ChurchProfile])],
   controllers: [ChurchProfilesController],
   providers: [ChurchProfilesService],
+  exports: [ChurchProfilesService],
 })
 export class ChurchProfilesModule {}
